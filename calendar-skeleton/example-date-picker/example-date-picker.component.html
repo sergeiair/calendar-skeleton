@@ -1,0 +1,32 @@
+<div class="d-picker">
+  <div class="d-picker__head">
+    <button class="d-picker__head__btn"
+      (click)="switchPrevMonth($event)"><
+    </button>
+    <h3>
+      {{activeMonthLabel}} {{activeDate.year}}
+    </h3>
+    <button class="d-picker__head__btn"
+      (click)="switchNextMonth($event)">>
+    </button>
+  </div>
+  <div class="d-picker__days">
+    <div *ngFor="let dayLabel of daysLabels; let i = index;"
+      class="d-picker__days__cell">
+        <strong>
+          {{dayLabel}}
+        </strong>
+    </div>
+  </div>
+  <div>
+    <div *ngFor="let week of calendarData"
+      class="d-picker__week">
+        <ng-template ngFor let-dayCell let-i="index" [ngForOf]="week">
+          <span class="d-picker__week__cell d-picker__week__cell--{{dayCell.type}}">
+            {{dayCell.date}}
+          </span>
+        </ng-template>
+    </div>
+  </div>
+</div>
+

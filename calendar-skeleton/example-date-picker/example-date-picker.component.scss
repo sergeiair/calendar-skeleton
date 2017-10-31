@@ -1,0 +1,42 @@
+
+$themeColor1: #4081D3;
+$themeColor2: #ccc;
+
+/*
+  Configuration
+*/
+$widgetWidth: 280px;
+
+/*
+  Computing sides
+*/
+$cellWidth: $widgetWidth / 7;
+
+.d-picker {
+  width: $widgetWidth;
+  &__head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__week,
+  &__days{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__cell {
+      width: $cellWidth;
+      padding: 5px 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      &--today {
+        font-weight: 700;
+        color: $themeColor1;
+      }
+      &--past {
+        color: $themeColor2;
+      }
+    }
+  }
+}
